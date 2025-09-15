@@ -1,10 +1,10 @@
 site_name: Multiagentic Retriever
 site_description: A framework for building multiagentic retrieval systems
-site_url: https://baraayusry.github.io/multiagentic-retriever/
+site_url: https://baraayusry.github.io/multiagentic-retriever/docs/
 repo_url: https://github.com/baraayusry/multiagentic-retriever
 repo_name: baraayusry/multiagentic-retriever
 docs_dir: content
-site_dir: site
+site_dir: site/docs
 
 theme:
   name: material
