@@ -1,20 +1,18 @@
 site_name: Multiagentic Retriever
 site_description: A framework for building multiagentic retrieval systems
-site_url: https://yourusername.github.io/multiagentic-retriever/
-repo_url: https://github.com/yourusername/multiagentic-retriever
-repo_name: yourusername/multiagentic-retriever
+site_url: https://baraayusry.github.io/multiagentic-retriever/
+repo_url: https://github.com/baraayusry/multiagentic-retriever
+repo_name: baraayusry/multiagentic-retriever
 
 theme:
   name: material
   palette:
-    # Palette toggle for light mode
     - scheme: default
       primary: blue
       accent: blue
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
-    # Palette toggle for dark mode
     - scheme: slate
       primary: blue
       accent: blue
@@ -72,8 +70,8 @@ nav:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/yourusername/multiagentic-retriever
+      link: https://github.com/baraayusry/multiagentic-retriever
     - icon: fontawesome/brands/python
       link: https://pypi.org/project/multiagentic-retriever/
 
-copyright: Copyright &copy; 2024 Your Name
+copyright: Copyright &copy; 2025 Elbaraa Elsaadany. All rights reserved.

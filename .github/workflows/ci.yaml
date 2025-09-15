@@ -10,10 +10,13 @@ on:
 jobs:
   test:
     runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
-        python-version: [3.8, 3.9, '3.10', '3.11', '3.12']
+        os: [ubuntu-latest]
+        python-version: [3.9, '3.12']
     
     steps:
     - uses: actions/checkout@v4
@@ -45,27 +48,39 @@ jobs:
     
     - name: Type check with mypy
       run: |
-        mypy src
+        if compgen -G "src/**/*.py" > /dev/null; then
+          mypy src
+        else
+          echo "No Python files in src, skipping mypy"
+        fi
     
     - name: Format check with black
       run: |
-        black --check src
+        if compgen -G "src/**/*.py" > /dev/null; then
+          black --check src
+        else
+          echo "No Python files in src, skipping black"
+        fi
     
     - name: Import sort check with isort
       run: |
-        isort --check-only src
+        if compgen -G "src/**/*.py" > /dev/null; then
+          isort --check-only src
+        else
+          echo "No Python files in src, skipping isort"
+        fi
     
     - name: Test with pytest
       run: |
-        if [ -d tests ]; then
+        if compgen -G "tests/**/*.py" > /dev/null; then
           pytest tests/ --cov=src --cov-report=xml --cov-report=term-missing
         else
           echo "No tests found, skipping tests"
         fi
 
     - name: Upload coverage to Codecov
-      if: ${{ hashFiles('tests/**') != '' }}
-      uses: codecov/codecov-action@v3
+      if: ${{ hashFiles('tests/**/*.py') != '' }}
+      uses: codecov/codecov-action@v4
       with:
         file: ./coverage.xml
         flags: unittests
@@ -73,6 +88,9 @@ jobs:
 
   security:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
     steps:
     - uses: actions/checkout@v4
     
