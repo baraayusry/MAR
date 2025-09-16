@@ -4,3 +4,4 @@ numpy>=1.21.0
 python-dotenv>=1.0.0
 tenacity>=8.0.0
 rich>=13.0.0
+strands-agents
