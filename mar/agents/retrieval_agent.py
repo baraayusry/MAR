@@ -1,11 +1,12 @@
 import logging
 from typing import Dict, List
 
-class RetrievalAgent:
+class RetrieverAgent:
     """
     AI agent with  tools:
-      - RetrieveTool: Tool to retriever relevant docunemtns using a (set) retrieval mthods
+      - RetrieveTool: Tool to retriever relevant docunemtns using a (set) retrieval algorithms.
       - FilterTool: Tool to binary judge the relevancy of retrieved documents.
+      
     """
     def __init__(self, retrieve_tool, filter_tool=None, filter_policy: dict=None, filter_threshold: int = 200, logger: logging.Logger=None):
         self.retrieve_tool = retrieve_tool
