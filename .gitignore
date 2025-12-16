@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.venv-vllm
+# Large Data & Models
+/leonardo_scratch/
+datasets/
+models/
+embs/
+output/
+
+# IDE settings
+.vscode/
+.idea/
+
+# System
+.DS_Store

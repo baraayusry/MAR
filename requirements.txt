@@ -1,0 +1,13 @@
+torch
+transformers
+sentence-transformers
+pyserini
+beir
+scipy
+numpy
+tqdm
+pydantic
+pydantic-settings
+requests
+scikit-learn
+pyyaml
